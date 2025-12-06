@@ -99,8 +99,4 @@ I'm building this in public over 7 days. Follow along:
 
 ---
 
-<<<<<<< HEAD
 **Disclaimer:** This is an educational project. Not financial advice. Do not make trading decisions based on predictions from this model.
-=======
-**Disclaimer:** This is an educational project. Not financial advice. Do not make trading decisions based on predictions from this model.
->>>>>>> bd34013 (STUFFS ADDED)
