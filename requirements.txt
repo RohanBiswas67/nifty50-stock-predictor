@@ -7,3 +7,4 @@ plotly
 scikit-learn
 jupyter
 python-dotenv
+torch
