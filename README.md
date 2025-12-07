@@ -4,53 +4,88 @@
 
 ## What I'm Building
 
-An LSTM-based stock price prediction system for Indian equity markets that will:
-- Predict next-day closing prices for top Nifty50 stocks
-- Provide buy/hold/sell recommendations based on predictions
-- Display confidence intervals and risk metrics
-- Target: 70%+ directional accuracy
+An LSTM-based stock price prediction system for Indian equity markets that:
+- Predicts next-day price movements for top Nifty50 stocks
+- Uses deep learning to identify patterns in market data
+- Provides directional predictions (UP/DOWN) with confidence scores
+- Demonstrates end-to-end ML pipeline from data collection to model deployment
 
-## Current Status: Day 1 
+## Current Status: Day 3 Complete
 
-**Completed:**
-- Data collection pipeline for 10 Nifty50 stocks
-- 4 years of historical data (2021-2025)
-- Technical indicators calculated (RSI, MACD, Bollinger Bands, Moving Averages)
-- Exploratory data analysis with visualizations
-- 9,000+ clean data points ready for modeling
+### Day 1: Data Collection
+- Built data collection pipeline for 10 Nifty50 stocks
+- Fetched 4 years of historical data (2021-2025)
+- Calculated technical indicators (RSI, MACD, Bollinger Bands, Moving Averages)
+- Created exploratory data analysis with visualizations
+- 9,000+ clean data points collected
 
-**Stocks Tracked:**
-Reliance, TCS, HDFC Bank, Infosys, ICICI Bank, Bharti Airtel, SBI, ITC, HUL, Kotak Bank
+**Stocks Tracked:** Reliance, TCS, HDFC Bank, Infosys, ICICI Bank, Bharti Airtel, SBI, ITC, HUL, Kotak Bank
 
-**Coming Next:**
-- Day 2: Data preprocessing & feature engineering
-- Day 3: LSTM model implementation
-- Day 4: Model optimization & validation
-- Day 5: Streamlit dashboard development
-- Day 6: Deployment
-- Day 7: Documentation & launch
+### Day 2: Data Preprocessing & Feature Engineering
+- Cleaned dataset: 8,500+ samples ready for ML
+- Created 15+ predictive features:
+  - Momentum indicators (5-day, 10-day)
+  - Volatility ratios
+  - Volume change patterns
+  - Sector indices (Domestic Economy, IT)
+  - Price position indicators
+- Time-based train/val/test splits (70/15/15)
+- Feature correlation analysis
+
+**Key Discovery:** Indian banking stocks and Bharti Airtel show 0.97+ correlation - they move together as a "Domestic Economy Index" based on RBI policy and GDP growth.
+
+### Day 3: LSTM Model Training
+- Built 2-layer LSTM neural network (218,000+ parameters)
+- Implemented multiple approaches:
+  - Regression model (predicting returns)
+  - Classification model (predicting UP/DOWN)
+- Achieved 51% directional accuracy on test set
+- Created comprehensive evaluation metrics and visualizations
+- Proper training methodology with early stopping and validation
+
+**Key Learning:** Stock market prediction with public data is extremely challenging. Market efficiency and high noise levels make prediction inherently difficult.
+
+### Coming Next:
+- Day 4: Streamlit dashboard for interactive visualization
+- Day 5: Dashboard enhancements and user experience
+- Day 6: Deployment and documentation
+- Day 7: Final polish and launch
 
 ## Tech Stack
 
-**Currently Using:**
+**Data & Processing:**
 - Python 3.10+
 - yfinance (NSE data)
 - pandas, numpy (data processing)
-- matplotlib, seaborn, plotly (visualization)
+- scikit-learn (preprocessing, metrics)
 
-**Coming Soon:**
+**Machine Learning:**
 - PyTorch (LSTM model)
-- Streamlit (web dashboard)
-- Deployment platform TBD
+- Custom feature engineering pipeline
 
-## Technical Indicators Implemented
+**Visualization:**
+- matplotlib, seaborn, plotly (charts)
 
+**Development:**
+- Git/GitHub (version control)
+- Jupyter notebooks (exploration)
+
+## Technical Features
+
+**Indicators Calculated:**
 - Simple Moving Averages (10, 20, 50-day)
 - Exponential Moving Averages (12, 26-day)
 - MACD (Moving Average Convergence Divergence)
 - RSI (Relative Strength Index)
 - Bollinger Bands (20-day, 2 std dev)
 - Daily Returns & 20-day Rolling Volatility
+
+**Engineered Features:**
+- Price momentum (5-day, 10-day)
+- Volatility ratios
+- Volume change patterns
+- Sector correlation indices
+- Price position relative to ranges
 
 ## Quick Start
 ```bash
@@ -61,30 +96,54 @@ cd nifty50-stock-predictor
 # Install dependencies
 pip install -r requirements.txt
 
-# Fetch latest data
+# Step 1: Fetch latest data
 python fetch_data.py
 
-# Explore data
-jupyter notebook notebooks/day1_exploration.ipynb
+# Step 2: Preprocess data and engineer features
+python preprocess_data.py
+
+# Step 3: Create sequences for LSTM
+python create_sequences.py
+
+# Step 4: Train the model
+python train_lstm.py
+
+# Explore the data and results
+jupyter notebook notebooks/exploration.ipynb
+jupyter notebook notebooks/feature_analysis.ipynb
 ```
 
 ## Project Structure
 ```
 nifty50-stock-predictor/
 ├── data/
-│   └── raw/              # Historical stock data (CSV files)
+│   ├── raw/              # Historical stock data (CSV files)
+│   └── processed/        # Cleaned data, engineered features, sequences
+├── models/               # Trained model weights and scaler
 ├── notebooks/            
-│   └── day1_exploration.ipynb  # Data exploration & visualization
-├── fetch_data.py         # Data fetching script
+│   ├── day1_exploration.ipynb      # Data exploration & visualization
+│   └── day2_feature_analysis.ipynb # Feature engineering analysis
+├── fetch_data.py         # Data collection script
+├── preprocess_data.py    # Feature engineering pipeline
+├── create_sequences.py   # Create LSTM input sequences
+├── train_lstm.py         # Model training script
 ├── requirements.txt      # Python dependencies
 └── README.md
 ```
 
-## Follow the Build
+## Model Performance
 
-I'm building this in public over 7 days. Follow along:
-- **LinkedIn**: Daily progress updates at [linkedin.com/in/rohan-biswas-0rb](https://www.linkedin.com/in/rohan-biswas-0rb)
-- **This Repo**: Check commits for daily progress
+**Test Set Results:**
+- Directional Accuracy: 51%
+- Approach: Binary classification (UP/DOWN)
+- Model: 2-layer LSTM with dropout
+- Training: 80 epochs with early stopping
+
+
+## Follow the Build
+Building in public over 7 days:
+- **LinkedIn**: Daily updates at [linkedin.com/in/rohan-biswas-0rb](https://www.linkedin.com/in/rohan-biswas-0rb)
+- **GitHub**: Check commits for progress
 
 ## Contact
 
@@ -99,4 +158,4 @@ I'm building this in public over 7 days. Follow along:
 
 ---
 
-**Disclaimer:** This is an educational project. Not financial advice. Do not make trading decisions based on predictions from this model.
+**Disclaimer:** This is an educational project demonstrating machine learning techniques. Not financial advice. Do not make trading decisions based on predictions from this model.
