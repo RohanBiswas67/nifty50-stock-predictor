@@ -81,7 +81,6 @@ jupyter notebook notebooks/feature_analysis.ipynb
 streamlit run app/dashboard.py
 
 ### Option 2 : Use Live Dashboard ( Recommended )
-Visit the deployed dashboard: [https://nifty50-stock-predictor-dashboard.streamlit.app/](https://nifty50-stock-predictor-dashboard.streamlit.app/)
 
 ```
 The dashboard will open at 'http://localhost:8501'
