@@ -1,55 +1,17 @@
 # Nifty50 Stock Price Predictor
 
-**Work in Progress** - Building in public over 7 days
+**[LIVE DASHBOARD](https://nifty50-stock-predictor-dashboard.streamlit.app/)** - Try it now!
 
-## What I'm Building
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.1-red.svg)](https://pytorch.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.29-FF4B4B.svg)](https://streamlit.io/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 An LSTM-based stock price prediction system for Indian equity markets that:
 - Predicts next-day price movements for top Nifty50 stocks
 - Uses deep learning to identify patterns in market data
 - Provides directional predictions (UP/DOWN) with confidence scores
 - Demonstrates end-to-end ML pipeline from data collection to model deployment
-
-## Current Status: Day 3 Complete
-
-### Day 1: Data Collection
-- Built data collection pipeline for 10 Nifty50 stocks
-- Fetched 4 years of historical data (2021-2025)
-- Calculated technical indicators (RSI, MACD, Bollinger Bands, Moving Averages)
-- Created exploratory data analysis with visualizations
-- 9,000+ clean data points collected
-
-**Stocks Tracked:** Reliance, TCS, HDFC Bank, Infosys, ICICI Bank, Bharti Airtel, SBI, ITC, HUL, Kotak Bank
-
-### Day 2: Data Preprocessing & Feature Engineering
-- Cleaned dataset: 8,500+ samples ready for ML
-- Created 15+ predictive features:
-  - Momentum indicators (5-day, 10-day)
-  - Volatility ratios
-  - Volume change patterns
-  - Sector indices (Domestic Economy, IT)
-  - Price position indicators
-- Time-based train/val/test splits (70/15/15)
-- Feature correlation analysis
-
-**Key Discovery:** Indian banking stocks and Bharti Airtel show 0.97+ correlation - they move together as a "Domestic Economy Index" based on RBI policy and GDP growth.
-
-### Day 3: LSTM Model Training
-- Built 2-layer LSTM neural network (218,000+ parameters)
-- Implemented multiple approaches:
-  - Regression model (predicting returns)
-  - Classification model (predicting UP/DOWN)
-- Achieved 51% directional accuracy on test set
-- Created comprehensive evaluation metrics and visualizations
-- Proper training methodology with early stopping and validation
-
-**Key Learning:** Stock market prediction with public data is extremely challenging. Market efficiency and high noise levels make prediction inherently difficult.
-
-### Coming Next:
-- Day 4: Streamlit dashboard for interactive visualization
-- Day 5: Dashboard enhancements and user experience
-- Day 6: Deployment and documentation
-- Day 7: Final polish and launch
 
 ## Tech Stack
 
@@ -114,7 +76,12 @@ jupyter notebook notebooks/exploration.ipynb
 jupyter notebook notebooks/feature_analysis.ipynb
 
 # Running the dashboard
+
+### Option 1 : Run Locally
 streamlit run app/dashboard.py
+
+### Option 2 : Use Live Dashboard ( Recommended )
+Visit the deployed dashboard: **[https://nifty50-stock-predictor-dashboard.streamlit.app/](https://nifty50-stock-predictor-dashboard.streamlit.app/)**
 
 ```
 The dashboard will open at 'http://localhost:8501'
