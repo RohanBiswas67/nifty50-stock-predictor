@@ -65,6 +65,7 @@ An LSTM-based stock price prediction system for Indian equity markets that:
 
 **Visualization:**
 - matplotlib, seaborn, plotly (charts)
+- streamlit
 
 **Development:**
 - Git/GitHub (version control)
@@ -111,7 +112,12 @@ python train_lstm.py
 # Explore the data and results
 jupyter notebook notebooks/exploration.ipynb
 jupyter notebook notebooks/feature_analysis.ipynb
+
+# Running the dashboard
+streamlit run app/dashboard.py
+
 ```
+The dashboard will open at 'http://localhost:8501'
 
 ## Project Structure
 ```
