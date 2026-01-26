@@ -9,3 +9,4 @@ jupyter
 python-dotenv
 torch
 streamlit
+altair
