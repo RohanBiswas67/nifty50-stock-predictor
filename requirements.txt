@@ -9,4 +9,4 @@ jupyter
 python-dotenv
 torch
 streamlit
-altair
+altair<5.0.0
