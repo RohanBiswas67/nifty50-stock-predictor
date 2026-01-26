@@ -10,3 +10,4 @@ python-dotenv
 torch
 streamlit
 altair<5.0.0
+imghdr
